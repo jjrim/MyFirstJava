@@ -20,7 +20,7 @@ public class Part1 {
             minutes.add(i);
         }
 
-        for (int hour = 0; hour < hours.size(); i++) {
+        for (int hour = 0; hour < hours.size(); hour++) {
             if (hours.get(hour) == 1) {
                 answer += 2;
             } else if (hours.get(hour) == 2 || hours.get(hour) == 3 || hours.get(hour) == 5) {
