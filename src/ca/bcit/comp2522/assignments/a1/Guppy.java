@@ -362,6 +362,11 @@ public class Guppy {
                 && species.equals(guppy.species);
     }
 
+    /**
+     * Returns a hash code value for Guppy.
+     *
+     * @return a hash code value of Guppy
+     */
     @Override
     public int hashCode() {
         return Objects.hash(genus, species, ageInWeeks, isFemale, generationNumber, isAlive,
