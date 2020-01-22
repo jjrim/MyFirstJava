@@ -8,9 +8,13 @@ import java.util.Random;
  * Represents a Hare.
  *
  * @author Jay Rim A01174716
- * @version 2020.01
+ * @version 2020
  */
 public class Hare {
+    /**
+     * Small slip chance.
+     */
+    public static final int SMALL_SLIP_CHANCE = 10;
     /**
      * Chance to do a small hop.
      */
@@ -70,27 +74,25 @@ public class Hare {
 
     /**
      * Set the position of Hare.
+     *
      * @param position the new position of Hare to be set, an int
      */
     public void setPosition(int position) {
         this.position = position;
     }
 
-    public int move() {
+    public void move() {
         Random random = new Random();
         int moveProbability = random.nextInt(MAXIMUM_NUMBER);
-        if (moveProbability < BIG_HOP_CHANCE) {
-            position = START_POSITION;
-        } else if (moveProbability == BIG_HOP_CHANCE) {
+        if (moveProbability == BIG_HOP_CHANCE) {
             position = position + BIG_HOP;
         } else if (moveProbability == BIG_SLIP_CHANCE) {
             position = position - BIG_SLIP;
         } else if (moveProbability < SMALL_HOP_CHANCE) {
             position = position + SMALL_HOP;
-        } else {
+        } else if (moveProbability < SMALL_SLIP_CHANCE) {
             position = position - SMALL_SLIP;
         }
-        return position;
     }
 
     /**
