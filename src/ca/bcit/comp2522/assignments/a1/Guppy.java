@@ -71,12 +71,12 @@ public class Guppy {
      * Guppy object constructor.
      */
     public Guppy() {
-        genus = DEFAULT_GENUS;
-        species = DEFAULT_SPECIES;
-        isFemale = true;
-        isAlive = true;
-        healthCoefficient = DEFAULT_HEALTH_COEFFICIENT;
-        identificationNumber = ++numberOfGuppiesBorn;
+        this.genus = DEFAULT_GENUS;
+        this.species = DEFAULT_SPECIES;
+        this.isFemale = true;
+        this.isAlive = true;
+        this.healthCoefficient = DEFAULT_HEALTH_COEFFICIENT;
+        this.identificationNumber = ++numberOfGuppiesBorn;
     }
 
     /**
@@ -98,13 +98,13 @@ public class Guppy {
                  int newGenerationNumber,
                  double newHealthCoefficient) {
         if (newGenus != null && newGenus.trim().length() > 0) {
-            genus = formatNameTitle(newGenus.trim());
+            this.genus = formatNameTitle(newGenus.trim());
         } else {
             throw new IllegalArgumentException("Genus cannot be empty!");
         }
 
         if (newSpecies != null && newSpecies.trim().length() > 0) {
-            species = newSpecies.trim().toLowerCase();
+            this.species = newSpecies.trim().toLowerCase();
         } else {
             throw new IllegalArgumentException("Species cannot be empty!");
         }
@@ -113,26 +113,26 @@ public class Guppy {
         if (newAgeInWeeks < 0) {
             throw new IllegalArgumentException("Incorrect Age!");
         } else {
-            ageInWeeks = newAgeInWeeks;
+            this.ageInWeeks = newAgeInWeeks;
         }
 
-        isFemale = newIsFemale;
+        this.isFemale = newIsFemale;
 
         if (newGenerationNumber < 0 || newAgeInWeeks >= MAXIMUM_AGE_IN_WEEKS) {
             throw new IllegalArgumentException("Generation must be positive!");
         } else {
-            generationNumber = newGenerationNumber;
+            this.generationNumber = newGenerationNumber;
         }
 
         if (newHealthCoefficient < MINIMUM_HEALTH_COEFFICIENT
                 || newHealthCoefficient > MAXIMUM_HEALTH_COEFFICIENT) {
             throw new IllegalArgumentException("Health coefficient must be in range!");
         } else {
-            healthCoefficient = newHealthCoefficient;
+            this.healthCoefficient = newHealthCoefficient;
         }
 
-        isAlive = true;
-        identificationNumber = ++numberOfGuppiesBorn;
+        this.isAlive = true;
+        this.identificationNumber = ++numberOfGuppiesBorn;
 
     }
 
@@ -142,7 +142,7 @@ public class Guppy {
      */
     public void incrementAge() {
         if (isAlive) {
-            ++ageInWeeks;
+            ++this.ageInWeeks;
         }
         if (getAgeInWeeks() > MAXIMUM_AGE_IN_WEEKS) {
             setIsAlive(false);
@@ -239,7 +239,7 @@ public class Guppy {
      */
     public void setAgeInWeeks(int newAgeInWeeks) {
         if (newAgeInWeeks >= 0 && newAgeInWeeks <= MAXIMUM_AGE_IN_WEEKS) {
-            ageInWeeks = newAgeInWeeks;
+            this.ageInWeeks = newAgeInWeeks;
         }
     }
 
@@ -249,7 +249,7 @@ public class Guppy {
      * @param newIsAlive true if alive, otherwise false
      */
     public void setIsAlive(boolean newIsAlive) {
-        isAlive = newIsAlive;
+        this.isAlive = newIsAlive;
     }
 
     /**
@@ -261,7 +261,7 @@ public class Guppy {
     public void setHealthCoefficient(double newHealthCoefficient) {
         if (newHealthCoefficient >= MINIMUM_HEALTH_COEFFICIENT
                 && newHealthCoefficient <= MAXIMUM_HEALTH_COEFFICIENT) {
-            healthCoefficient = newHealthCoefficient;
+            this.healthCoefficient = newHealthCoefficient;
         }
     }
 
