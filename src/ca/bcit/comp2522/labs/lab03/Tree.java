@@ -3,17 +3,34 @@ package ca.bcit.comp2522.labs.lab03;
 
 import java.util.Objects;
 
+/**
+ * Tree Class.
+ *
+ * @author Jay Rim A01174716
+ * @version 2020
+ */
+
 public class Tree {
+    /**
+     * Minimum age of Tree, an int.
+     */
     public static final int MINIMUM_AGE = 0;
+    /**
+     * Minimum circumference of Tree, an int.
+     */
     public static final int MINIMUM_CIRCUMFERENCE = 0;
+
+    /**
+     *  Different types of species that tree can have.
+     */
     public enum Species {
-        MAPLE,
-        ARBUTUS,
-        BLUE_SPRUCE
+        MAPLE, ARBUTUS, BLUE_SPRUCE
     }
+
     private Species typeOfTree;
     private int ageInYears;
     private double trunkCircumferenceInCM;
+
     public Tree(int ageInYears, double trunkCircumferenceInCM, final Species species) {
         if (ageInYears >= MINIMUM_AGE) {
             this.ageInYears = ageInYears;
@@ -23,33 +40,45 @@ public class Tree {
         }
         this.typeOfTree = species;
     }
+
     public Tree(int ageInYears, double trunkCircumferenceInCm) { // fix this
         this(ageInYears, trunkCircumferenceInCm, Species.MAPLE);
     }
+
     public int getAgeInYears() {
         return this.ageInYears;
     }
+
     public double getTrunkCircumferenceInCm() {
         return this.trunkCircumferenceInCM;
     }
+
     public Species getSpecies() {
         return this.typeOfTree;
     }
+
     public void setAgeInYears(int ageInYears) {
         this.ageInYears = ageInYears;
     } // FIX THIS
+
     public void setTrunkCircumferenceInCM(double trunkCircumferenceInCm) { // FIX THIS
         this.trunkCircumferenceInCM = trunkCircumferenceInCm;
     }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Tree tree = (Tree) o;
-        return ageInYears == tree.ageInYears &&
-                Double.compare(tree.trunkCircumferenceInCM, trunkCircumferenceInCM) == 0 &&
-                typeOfTree == tree.typeOfTree;
+        return ageInYears == tree.ageInYears
+                && Double.compare(tree.trunkCircumferenceInCM, trunkCircumferenceInCM) == 0
+                && typeOfTree == tree.typeOfTree;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(typeOfTree, ageInYears, trunkCircumferenceInCM);
