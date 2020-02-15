@@ -14,7 +14,6 @@ import java.util.Random;
 
 public class Ecosystem {
 
-
     /**
      * Skookumchuk pool volume, 3000.
      */

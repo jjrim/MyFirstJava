@@ -24,7 +24,6 @@ public class GuppyTest {
 
     @org.junit.Before
     public void setUp() throws Exception {
-
         defaultGuppy = new Guppy();
         testGuppy = new Guppy("Poecilia",
                 "elegans",

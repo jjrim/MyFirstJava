@@ -3,7 +3,6 @@ package ca.bcit.comp2522.assignments.a2;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Random;
-
 /**
  * Guppy Class
  * Represents a Guppy Class.

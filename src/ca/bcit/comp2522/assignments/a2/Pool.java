@@ -123,7 +123,6 @@ public class Pool {
     public double getVolumeLitres() {
         return this.volumeLiters;
     }
-
     /**
      * get temperature of pool.
      *
