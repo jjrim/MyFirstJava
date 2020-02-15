@@ -1,11 +1,6 @@
 package ca.bcit.comp2522.assignments.a2;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.Objects;
-import java.util.Random;
-import java.util.Collections;
+import java.util.*;
 
 
 /**
@@ -106,7 +101,7 @@ public class Pool {
 
     }
 
-    public String formatName(final String nameToFormat) {
+    public String formatName(final String name) {
         return (name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase());
     }
 
@@ -157,15 +152,13 @@ public class Pool {
     }
 
     /**
-     * Get identification number of pool.
-     *
-     * @return identification number
+     * @return
      */
     public int getIdentificationNumber() {
         return this.identificationNumber;
     }
 
-    public void setVolumeLitres(double newVolumeLiters) {
+    public void setVolumeLitres(double volumeLiters) {
 
         if (volumeLiters > 0) {
 
@@ -174,15 +167,14 @@ public class Pool {
     }
 
     public void setTemperatureCelsius(double temperatureCelsius) {
-        if (MINIMUM_POOL_TEMP_CELSIUS <= temperatureCelsius
-                && temperatureCelsius <= MAXIMUM_POOL_TEMP_CELSIUS) {
+        if (MINIMUM_POOL_TEMP_CELSIUS <= temperatureCelsius && temperatureCelsius <= MAXIMUM_POOL_TEMP_CELSIUS) {
             this.temperatureCelsius = temperatureCelsius;
         } else {
             this.temperatureCelsius = DEFAULT_POOL_TEMP_CELSIUS;
         }
     }
 
-    public void setPH(double newPH) {
+    public void setPH(double pH) {
         if (0.0 <= pH && pH <= MAX_PH) {
             this.pH = pH;
         }
@@ -207,12 +199,10 @@ public class Pool {
 
     /**
      * changes temperature of pool.
-     * if it the temperature of pool decreases under the minimum possible temperature,
-     * set it to minimum temperature.
-     * if it the temperature of pool increases above the maximum possible temperature,
-     * set it to maximum temperature
+     * if it the temperature of pool decreases under the minimum possible temperature, set it to minimum temperature.
+     * if it the temperature of pool increases above the maximum possible temperature, set it to maximum temperature
      *
-     * @param delta change in temperature to be made
+     * @param
      */
     public void changeTemperature(double delta) {
         double newTemperatureCelsius = this.temperatureCelsius + delta;
@@ -310,7 +300,6 @@ public class Pool {
     }
 
     /**
-     * Get average health coefficient of pool.
      *
      * @return averageHealthCoefficient
      */

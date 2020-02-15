@@ -106,7 +106,7 @@ public class Guppy {
      * @param newGenerationNumber  must be positive
      * @param newHealthCoefficient must be between MINIMUM_HEALTH_COEFFICIENT
      *                             and MAXIMUM_HEALTH_COEFFICIENT
-     *
+     * @throws IllegalArgumentException
      */
 
     public Guppy(final String newGenus,

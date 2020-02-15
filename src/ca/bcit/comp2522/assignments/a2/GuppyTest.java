@@ -2,11 +2,9 @@ package ca.bcit.comp2522.assignments.a2;
 
 import org.junit.Rule;
 import org.junit.Test;
-
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.*;
-
-import org.junit.rules.*;
 
 /**
  * Guppy Test
